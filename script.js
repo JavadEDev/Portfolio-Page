@@ -19,6 +19,6 @@ function openmenu() {
     navmenu.style.right = "0";
 }
 function closemenu() {
-    navmenu.style.right = "-200px";
+    navmenu.style.right = "-400px";
 
 }
