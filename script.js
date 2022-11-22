@@ -14,11 +14,19 @@ function opentab(tabname) {
     document.getElementById(tabname).classList.add("tab-active");
 }
 
-const navmenu = document.getElementById("navmenu");
-function openmenu() {
-    navmenu.style.right = "0";
-}
-function closemenu() {
-    navmenu.style.right = "-400px";
 
-}
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzHxQgT0W13UCjGYgESfbi69OM8vqIfe8qfi1a9sdZmRVSHmXF5GKW9Um1g7027XaNV0Q/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("msg")
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+})
