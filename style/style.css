@@ -28,7 +28,8 @@
 body {
     font-family: 'Exo', Tahoma, Geneva, Verdana, sans-serif;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -127,7 +128,7 @@ nav {
 .toggler:checked+.hamburger>div::after {
     top: 0;
     transform: rotate(135deg);
-    background:var(--black-100);
+    background: var(--black-100);
 }
 
 .navmenu {
@@ -191,36 +192,36 @@ nav .fas {
     place-items: center;
 }
 
-.banner-img {
+/* .banner-img {
     flex-basis: 35%;
-}
+} */
 
-.banner-img img {
+/* .banner-img img {
     width: 100%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
-}
+} */
 
-.banner-text {
+/* .banner-text {
     flex-basis: 60%;
-}
+} */
 
 .banner-animation {
-    width: 23ch;
-    -webkit-animation: typing 2s steps(22), blink 0.5s step-end alternate;
-    animation: typing 2s steps(22), blink 0.5s step-end alternate;
+    width: 100%;
+    -webkit-animation: typing 5s steps(22), blink 0.5s step-end alternate;
+    animation: typing 5s steps(22), blink 0.5s step-end alternate;
     white-space: nowrap;
     overflow: hidden;
-    font-size: calc(0.1rem + 3vw);
+    text-align: center;
 }
 
 .banner-animation h1 {
-    font-size: calc(0.5rem + 3vw);
-    margin-top: 2rem;
-    line-height: 5rem;
+    font-size: calc(1rem + 3vw);
+    margin-top: auto;
+    line-height: 8rem;
 }
 
 .banner-animation h1 span {
@@ -239,11 +240,11 @@ nav .fas {
 
 .about-col-1 img {
     width: 100%;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    border-radius: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
 }
 
 .about-col-2 {
@@ -582,6 +583,7 @@ form .btn2 {
     cursor: pointer;
     margin-bottom: 50px;
 }
+
 #msg {
     color: var(--white-100);
     font-weight: bold;
@@ -742,46 +744,44 @@ form .btn2 {
 }
 
 /* ---------- CSS for Small Screen --------- */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .banner {
         display: grid;
+        margin-top: 100px;
+        height: 200px;
     }
 
-    .banner-text {
+    /* .banner-text {
         text-align: center;
-    }
+    } */
 
     .banner-animation {
-        width: 30ch;
+        width: 100%;
         white-space: wrap;
         overflow: hidden;
     }
 
     .banner-animation h1 {
-        line-height: 2rem;
+        line-height: 5rem;
     }
 
-    .banner-img img {
+    /* .banner-img img {
         height: 300px;
-    }
+    } */
 
     nav {
         position: fixed;
         z-index: 1;
         width: 0%;
-        height: 100vh;
+        height: 100%;
         /*APPLYINGTRANSITIONTOTHEMENU:;
-        */transition: all 0.4s ease;
+        */
+        transition: all 0.4s ease;
         background: var(--red-200);
-        -webkit-border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -ms-border-radius: 10px ;
-        -o-border-radius: 10px ;
-        border-radius: 10px ;
-}
+    }
 
     /* IF THE TOGGLER IS CHECKED, THEN INCREASE THE WIDTH OF THE MENU TO 30% , CREATING A SMOOTH EFFECT :  */
-    .toggler:checked ~ nav {
+    .toggler:checked~nav {
         width: 25%;
     }
 
@@ -808,15 +808,16 @@ form .btn2 {
     }
 
     /* WHEN THE TOGGLER IS CHECKED, CHANGE THE VISIBILITY TO VISIBLE :  */
-    .toggler:checked ~ nav > .navmenu {
+    .toggler:checked~nav>.navmenu {
         transition: visibility 0.4s ease;
         transition-delay: 0.1s;
         visibility: visible;
     }
 
-    .toggler:checked ~ nav > .navmenu > li > a:hover {
+    .toggler:checked~nav>.navmenu>li>a:hover {
         color: var(--red-100);
     }
+
     .logo {
         flex: 0;
     }
@@ -842,8 +843,9 @@ form .btn2 {
         flex-basis: 100%;
     }
 
-    .about-col-1 {
-        display: none;
+    .about-col-1 img{
+        width: 75%;
+        align-items: center;
     }
 
     .tab-links {
@@ -854,7 +856,10 @@ form .btn2 {
     #contact,
     #portfolio,
     #services {
-        padding-top: 1.7rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
-
+    .row {
+        flex-direction: column;
+    }
 }
