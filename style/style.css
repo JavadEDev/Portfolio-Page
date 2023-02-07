@@ -32,6 +32,10 @@ body {
 html {
     scroll-behavior: smooth;
 }
+#header {
+    display: flex;
+    flex-direction: column;
+}
 
 .container {
     padding: 0 10%;
@@ -47,6 +51,12 @@ html {
 
 /* ---------- Navigation section ---------- */
 nav {
+    height: 85px;
+    background: var(--bgblu1);
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}nav {
     height: 85px;
     background: var(--bgblu1);
     position: fixed;
@@ -248,7 +258,7 @@ nav .fas {
 }
 
 .about-col-2 {
-    flex-basis: 60%;
+    flex-basis: 55%;
 }
 
 .sub-title {
@@ -511,7 +521,7 @@ nav .fas {
 }
 
 .contact-right {
-    flex-basis: 60%;
+    flex-basis: 55%;
 }
 
 .contact-left p {
@@ -622,7 +632,6 @@ form .btn2 {
 /* ---------- Background Animation --------- */
 .area {
     background: -webkit-linear-gradient(to left, var(--bgblu1), var(--bgblu2));
-    background: var(--bgblu2);
     width: 100%;
 }
 
@@ -746,7 +755,6 @@ form .btn2 {
 /* ---------- CSS for Small Screen --------- */
 @media only screen and (max-width: 768px) {
     .banner {
-        display: grid;
         margin-top: 100px;
         height: 200px;
     }
@@ -763,6 +771,7 @@ form .btn2 {
 
     .banner-animation h1 {
         line-height: 5rem;
+        margin-top: auto;
     }
 
     /* .banner-img img {
@@ -843,9 +852,8 @@ form .btn2 {
         flex-basis: 100%;
     }
 
-    .about-col-1 img{
+    .about-col-1 img {
         width: 75%;
-        align-items: center;
     }
 
     .tab-links {
@@ -859,7 +867,13 @@ form .btn2 {
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+
     .row {
         flex-direction: column;
+        justify-content:center;
+        flex-wrap:nowrap;
+    }
+    .area {
+        display: none;
     }
 }
